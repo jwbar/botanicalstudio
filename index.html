@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Botanical Studio is a pioneer in smart indoor farming technology, specializing in customizable grow lamps, advanced automation systems, and Cannabis Anbauverien Gründung Beratung.">
+    <meta name="keywords" content="indoor farming, smart grow lamps, automation systems, Cannabis Anbauverien Gründung Beratung, climate control, irrigation systems, Germany">
+    <meta name="author" content="Botanical Studio">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for social media -->
+    <meta property="og:title" content="Botanical Studio - Smart Indoor Farming Technology">
+    <meta property="og:description" content="Specializing in customizable grow lamps, advanced automation systems, and Cannabis Anbauverien Gründung Beratung.">
+    <meta property="og:image" content="https://botanical.studio/img/website-preview-image.png">
+    <meta property="og:url" content="https://botanical.studio">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Botanical Studio - Smart Indoor Farming Technology">
+    <meta name="twitter:description" content="Specializing in customizable grow lamps, advanced automation systems, and Cannabis Anbauverien Gründung Beratung.">
+    <meta name="twitter:image" content="https://botanical.studio/img/website-preview-image.png">
+    
+    <!-- Other Meta Tags -->
+    <link rel="canonical" href="https://botanical.studio">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <title>Botanical Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&family=Bowlby+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-cover bg-fixed bg-center" style="background-image: url('{{ url_for('static', filename='img/grow-hall.png') }}');">
+    <header class="fixed-top bg-custom text-custom shadow-lg">
+        <div class="container d-flex align-items-center p-3">
+            <div class="d-flex align-items-center mr-3">
+                <div class="position-relative">
+                    <div class="bg-light rounded-circle" style="width: 30px; height: 30px; z-index: 2;"></div>
+                    <div class="border border-light rounded-circle position-absolute" style="width: 40px; height: 40px; top: -5px; left: -5px; z-index: 1;"></div>
+                </div>
+            </div>
+            <h1 class="font-bowlby mb-0">Botanical Studio</h1>
+        </div>
+    </header>
+    <main class="mt-5 pt-5 container">
+        <section class="custom-container p-5 rounded-lg shadow mb-5 text-center">
+            <h2 class="font-bowlby text-custom-header mb-4">A pioneer in smart indoor farming technology</h2>
+        </section>
+        <section class="custom-container p-5 rounded-lg shadow text-center mb-4">
+            <h2 class="font-bowlby text-custom-header mb-4">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="image-container">
+                        <img src="{{ url_for('static', filename='img/growlamp.png') }}" class="img-fluid rounded">
+                        <h5 class="font-bowlby text-custom-header mb-4">Smart Lamps</h5>
+                        <div class="tooltip">
+                            <p>Customizable lamp builds starting from 100W, driven by a microcontroller, allowing for remote monitoring through an online interface</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="image-container">
+                        <img src="{{ url_for('static', filename='img/automation.png') }}" class="img-fluid rounded">
+                        <h5 class="font-bowlby text-custom-header mb-4">Automation Systems</h5>
+                        <div class="tooltip">
+                            <p>Growroom monitoring: regulates room climate, automates watering, and tracks soil quality and nutrient levels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="image-container">
+                        <img src="{{ url_for('static', filename='img/cannabislaws.png') }}" class="img-fluid rounded">
+                        <h5 class="font-bowlby text-custom-header mb-4">Cannabis Anbauverien Beratung</h5>
+                        <div class="tooltip">
+                            <p>Wir bieten Beratung und Unterstützung bei der Gründung Ihres Anbausvereins und der Satzungserstellung an.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="custom-container p-5 rounded-lg shadow mb-5 text-center">
+            <h2 class="font-bowlby text-custom-header mb-4">About Us</h2>
+            <div class="container-text">
+                <p>We specialize in creating innovative, controlled grow lamps that are fine-tuned and custom-built to meet your specific setup needs. Our mission is to revolutionize indoor farming by developing advanced automation systems for climate control and irrigation, ensuring optimal growth conditions for your plants.</p>
+                <p>Our state-of-the-art monitoring software allows you to control and observe your grow setups remotely, providing you with peace of mind and the convenience of managing your farm from anywhere.</p>
+                <p>Based in Germany, we also offer expert consultation services to help you navigate the process of finding and establishing a cannabis club. Our team assists with founding documents and licensing, ensuring a smooth and compliant setup.</p>
+                <p>Join us in the future of farming with our cutting-edge solutions designed to maximize efficiency and yield in your indoor growing environment.</p>
+            </div>
+        </section>
+        <section class="custom-container p-5 rounded-lg shadow mb-5 text-center">
+            <h2 class="font-bowlby text-custom-header mb-4">Contact Us</h2>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message[1] }}" role="alert">
+                            {{ message[0] }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form id="contactForm" action="/" method="POST">
+                <div class="form-group">
+                    <label for="name" class="text-custom">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="text-custom">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic" class="text-custom">Topic</label>
+                    <select class="form-control" id="topic" name="topic" required>
+                        <option value="Grow Lamps">Grow Lamps</option>
+                        <option value="Grow Room Monitoring">Grow Room Monitoring</option>
+                        <option value="Cannabis Anbauveriene Beratung">Cannabis Anbauveriene Beratung</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="text-custom">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-custom">Submit</button>
+            </form>
+            
+        </section>
+    </main>
+    <footer class="fixed-bottom bg-custom text-custom text-center p-3 shadow-lg">
+        <p>&copy; 2024 Botanical Studio. All rights reserved. Moosdorfstr 7-9, 12435 - </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltips = document.querySelectorAll('.image-container');
+    
+            tooltips.forEach(function(tooltip) {
+                tooltip.addEventListener('mouseover', function() {
+                    const tooltipBox = this.querySelector('.tooltip');
+                    if (tooltipBox) {
+                        tooltipBox.classList.add('tooltip-visible'); // Add class to show tooltip
+                    }
+                });
+    
+                tooltip.addEventListener('mouseout', function() {
+                    const tooltipBox = this.querySelector('.tooltip');
+                    if (tooltipBox) {
+                        tooltipBox.classList.remove('tooltip-visible'); // Remove class to hide tooltip
+                    }
+                });
+            });
+        });
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&family=Bowlby+One&display=swap');
+
+body {
+    font-family: 'Bona Nova', serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bowlby One', cursive;
+}
+
+.bg-custom {
+    background-color: #607c3c;
+}
+
+.text-custom {
+    color: #F3EEE9 !important;
+}
+
+.text-custom-header {
+    color: #F3EEE9;
+    -webkit-text-stroke: 1px black;
+}
+
+.custom-container {
+    background-color: rgba(0, 0, 0, 0.80);/* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    margin: 20%;
+  
+}
+.container-text{
+    color: #F3EEE9;
+    font-size: 1.5em;
+    padding: 5% 10%;
+    text-align: left;
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+.bg-center {
+    background-position: center;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%; /* Position above the image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    width: 200px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #F3EEE9;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0; /* Hide initially */
+    visibility: hidden; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.tooltip-visible {
+    opacity: 1; /* Show when the tooltip-visible class is added */
+    visibility: visible; /* Show when the tooltip-visible class is added */
+}
+
+
+.image-container:hover .tooltip {
+    opacity: 1; /* Show on hover */
+    visibility: visible; /* Show on hover */
+}
+
+.form-group label {
+    color: #F3EEE9;
+}
+
+.form-control {
+    background-color:#F3EEE9;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background-color: #607c3c;
+    color: #F3EEE9;
+    font-family: 'Bowlby One', cursive;
+    font-size: 1rem; /* h3 font size */
+    padding: 1% 2%;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #609a5c; /* Slightly darker shade for hover effect */
+    color: #ffffff;
+}
+
+.btn-custom:active {
+    background-color: black;
+}
+
+@media (max-width: 767px) {
+    .custom-container {
+        padding: 10px;
+        box-shadow: none;
+        margin: 5%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .container-text p {
+        font-size: 16px;
+        padding: 2.5% 5%;
+    }
+
+    .btn-custom {
+        font-size: 14px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+}

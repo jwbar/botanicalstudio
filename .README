@@ -1,0 +1,3 @@
+simple landing site  using python flask as a contact form.
+need to have your own SendGrid key and add to the line 29 in the mail-from.py
+sample sites enabled file for this domain.. edit it with your ports and domain names and place to point to your directory.

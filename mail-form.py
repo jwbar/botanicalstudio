@@ -3,7 +3,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 app = Flask(__name__)
-app.secret_key = 'botanicalkey'  # Change this to a secure value
+app.secret_key = 'replace from key file'  # Change this to a secure value
 
 @app.route('/', methods=['GET', 'POST'])
 def contact():
@@ -26,7 +26,7 @@ def contact():
 
         try:
             # Send the email
-            sg = SendGridAPIClient('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')
+            sg = SendGridAPIClient('replace with SG key from file')
             response = sg.send(msg)
             app.logger.info(f"Response Status Code: {response.status_code}")
             app.logger.info(f"Response Body: {response.body}")
